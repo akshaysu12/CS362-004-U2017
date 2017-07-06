@@ -674,8 +674,9 @@ void callAdventurer(struct gameState *state, int drawntreasure, int currentPlaye
 
 void callSmithy(struct gameState *state, int currentPlayer, int handPos)
 {
-  /*
+
   //+3 Cards
+  int i = 0;
   for (i = 0; i < 3; i++)
   {
     drawCard(currentPlayer, state);
@@ -683,7 +684,6 @@ void callSmithy(struct gameState *state, int currentPlayer, int handPos)
 
   //discard card from hand
   discardCard(handPos, currentPlayer, state, 0);
-  */
   return;
 }
 
