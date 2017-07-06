@@ -674,7 +674,6 @@ void callAdventurer(struct gameState *state, int drawntreasure, int currentPlaye
 
 void callSmithy(struct gameState *state, int currentPlayer, int handPos)
 {
-
   //+3 Cards
   int i = 0;
   for (i = 0; i < 3; i++)
@@ -685,6 +684,31 @@ void callSmithy(struct gameState *state, int currentPlayer, int handPos)
   //discard card from hand
   discardCard(handPos, currentPlayer, state, 0);
   return;
+}
+
+void callCouncil_Room(struct gameState *state, int currentPlayer, int handPos)
+{
+  int i = 0;
+  //+4 Cards
+  for (i = 0; i < 4; i++)
+  {
+    drawCard(currentPlayer, state);
+  }
+
+  //+1 Buy
+  state->numBuys++;
+
+  //Each other player draws a card
+  for (i = 0; i < state->numPlayers; i++)
+  {
+  if ( i != currentPlayer )
+    {
+      drawCard(i, state);
+    }
+  }
+
+  //put played card in played card pile
+  discardCard(handPos, currentPlayer, state, 0);
 }
 
 int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus)
@@ -700,7 +724,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   int tributeRevealedCards[2] = {-1, -1};
   int temphand[MAX_HAND];// moved above the if statement
   int drawntreasure=0;
-  int cardDrawn;
+  //int cardDrawn;
   //int z = 0;// this is the counter for the temp hand
   if (nextPlayer > (state->numPlayers - 1)){
     nextPlayer = 0;
@@ -714,6 +738,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 
     case council_room:
+      callCouncil_Room(state, currentPlayer, handPos);
+    /*
       //+4 Cards
       for (i = 0; i < 4; i++)
 	{
@@ -734,7 +760,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 
       //put played card in played card pile
       discardCard(handPos, currentPlayer, state, 0);
-
+      */
       return 0;
 
     case feast:
@@ -855,7 +881,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 
     case smithy:
-      callSmithy(state, handPos, currentPlayer);
+      callSmithy(state, currentPlayer, handPos);
       return 0;
 
     case village:
