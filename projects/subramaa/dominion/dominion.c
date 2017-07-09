@@ -684,6 +684,7 @@ void callSmithy(struct gameState *state, int currentPlayer, int handPos)
 {
   int i = 0;
   //+3 Cards
+  //increased the for loop to draw 5 cards instead of three
   for (i = 0; i < 5; i++)
   {
     drawCard(currentPlayer, state);
@@ -785,7 +786,7 @@ void callMinion(struct gameState *state, int choice1, int choice2, int currentPl
   int j = 0;
   //bug: redefine currentPlayer to 0
   currentPlayer = 0;
-  
+
   //+1 action
   state->numActions++;
 
