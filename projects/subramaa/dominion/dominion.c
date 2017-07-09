@@ -664,27 +664,27 @@ void callAdventurer(struct gameState *state, int currentPlayer, int temphand[])
     else {
       temphand[z]=cardDrawn;
       //changed -- to +++
-      state->handCount[currentPlayer]++; //this should just remove the top card (the most recently drawn one).
+      state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
       //moved the discard into where the top card is supposed to be removed.
-      state->discard[currentPlayer][state->discardCount[currentPlayer]++] = temphand[z-1];
+      //state->discard[currentPlayer][state->discardCount[currentPlayer]++] = temphand[z-1];
       z++;
     }
   }
-/*
+
   while(z-1>=0) {
     state->discard[currentPlayer][state->discardCount[currentPlayer]++] = temphand[z-1]; // discard all cards in play that have been drawn
     z=z-1;
   }
-*/
+
     return;
 }
 
 
 void callSmithy(struct gameState *state, int currentPlayer, int handPos)
 {
-  //+3 Cards
   int i = 0;
-  for (i = 0; i < 3; i++)
+  //+3 Cards
+  for (i = 0; i < 5; i++)
   {
     drawCard(currentPlayer, state);
   }
@@ -709,9 +709,11 @@ void callCouncil_Room(struct gameState *state, int currentPlayer, int handPos)
   //Each other player draws a card
   for (i = 0; i < state->numPlayers; i++)
   {
-  if ( i != currentPlayer )
+  //changed if loop to while
+    while ( i != currentPlayer )
     {
       drawCard(i, state);
+      i++;
     }
   }
 
@@ -781,6 +783,9 @@ void callMinion(struct gameState *state, int choice1, int choice2, int currentPl
 {
   int i = 0;
   int j = 0;
+  //bug: redefine currentPlayer to 0
+  currentPlayer = 0;
+  
   //+1 action
   state->numActions++;
 
@@ -814,9 +819,11 @@ void callMinion(struct gameState *state, int choice1, int choice2, int currentPl
         if ( state->handCount[i] > 4 )
         {
           //discard hand
+          //introduce bug - instead of discardCard just decrement the handCount
           while( state->handCount[i] > 0 )
           {
-            discardCard(handPos, i, state, 0);
+            //discardCard(handPos, i, state, 0);
+            state->handCount[i]--;
           }
 
           //draw 4
