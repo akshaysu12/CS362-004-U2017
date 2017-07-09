@@ -643,31 +643,39 @@ int getCost(int cardNumber)
   return -1;
 }
 
-void callAdventurer(struct gameState *state, int drawntreasure, int currentPlayer, int temphand[])
+void callAdventurer(struct gameState *state, int currentPlayer, int temphand[])
 {
+  //printf("%s\n", "adventurer card played!");
+  int drawntreasure = 0;
   int z = 0; // this is the counter for the temp hand
-  while(drawntreasure<2)
+  //increased the drawTreasure to player would draw 5 treasure cards instead of 2.
+  while(drawntreasure < 5)
   {
-    if (state->deckCount[currentPlayer] <1) {
+    if (state->deckCount[currentPlayer] < 1) {
       //if the deck is empty we need to shuffle discard and add to deck
       shuffle(currentPlayer, state);
     }
     drawCard(currentPlayer, state);
 
-    int cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1]; //top card of hand is most recently drawn card.
+    int cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer] - 1]; //top card of hand is most recently drawn card.
     if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold) {
       drawntreasure++;
     }
     else {
       temphand[z]=cardDrawn;
-      state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
+      //changed -- to +++
+      state->handCount[currentPlayer]++; //this should just remove the top card (the most recently drawn one).
+      //moved the discard into where the top card is supposed to be removed.
+      state->discard[currentPlayer][state->discardCount[currentPlayer]++] = temphand[z-1];
       z++;
     }
   }
+/*
   while(z-1>=0) {
     state->discard[currentPlayer][state->discardCount[currentPlayer]++] = temphand[z-1]; // discard all cards in play that have been drawn
     z=z-1;
   }
+*/
     return;
 }
 
@@ -835,7 +843,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 
   int tributeRevealedCards[2] = {-1, -1};
   int temphand[MAX_HAND];// moved above the if statement
-  int drawntreasure=0;
+  //int drawntreasure=0;
   //int cardDrawn;
   //int z = 0;// this is the counter for the temp hand
   if (nextPlayer > (state->numPlayers - 1)){
@@ -846,7 +854,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card )
     {
     case adventurer:
-      callAdventurer(state, drawntreasure, currentPlayer, temphand);
+      callAdventurer(state, currentPlayer, temphand);
       return 0;
 
     case council_room:
