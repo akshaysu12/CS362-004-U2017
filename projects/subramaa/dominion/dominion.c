@@ -785,7 +785,7 @@ void callMinion(struct gameState *state, int choice1, int choice2, int currentPl
   int j = 0;
   //bug: redefine currentPlayer to 0
   currentPlayer = 0;
-  
+
   //+1 action
   state->numActions++;
 
