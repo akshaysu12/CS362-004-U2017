@@ -12,6 +12,7 @@ allTests: smithyCardTest adventurerCardTest CouncilRoomCardTest baronCardTest te
 	gcov -b -c dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
 
+
 testIsGameOver: testIsGameOver.c dominion.o rngs.o
 	gcc -o testIsGameOver -g  testIsGameOver.c dominion.o rngs.o $(CFLAGS)
 
@@ -59,7 +60,7 @@ testAll: dominion.o testSuite.c
 
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
-
+	
 runtests: testDrawCard
 	./testDrawCard &> unittestresult.out
 	gcov dominion.c >> unittestresult.out
