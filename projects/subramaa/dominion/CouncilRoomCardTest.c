@@ -10,6 +10,8 @@ Council Room test card
 #include <stdlib.h>
 
 int main() {
+  printf("--------------------- COUNCIL ROOM CARD TEST ---------------------\n");
+
     //int i, j, m;
     int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
     //int remove1, remove2;
@@ -63,7 +65,7 @@ int main() {
     printf("\n");
     printf("------TESTING DECK SIZE -------\n");
     printf("Expected Value: %d, ACTUAL VALUE: %d\n", preDeckSize-4, state.deckCount[currPlayer]);
-    if (preDeckSize-3 == state.deckCount[currPlayer]) {
+    if (preDeckSize-4 == state.deckCount[currPlayer]) {
       printf("DECK SIZE: TEST PASSED\n");
     }
     else
@@ -88,12 +90,12 @@ int main() {
 
     printf("\n");
     printf("------TESTING NUM BUYS -------\n");
-    printf("Expected Value: %d, ACTUAL VALUE: %d\n", preNumBuys+1, state.handCount[currPlayer]);
+    printf("Expected Value: %d, ACTUAL VALUE: %d\n", preNumBuys+1, state.numBuys);
     if (preNumBuys + 1 == state.numBuys) {
-      printf("HAND SIZE: TEST PASSED\n");
+      printf("NUM BUYS: TEST PASSED\n");
     }
     else
-      printf("HAND SIZE: TEST FAILED\n");
+      printf("NUM BUYS: TEST FAILED\n");
 
     printf("\n");
     printf("------TESTING OTHER PLAYERS -------\n");

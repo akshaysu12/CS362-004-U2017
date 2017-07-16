@@ -8,6 +8,7 @@ drawCard Unit Tests
 #include "rngs.h"
 
 int main() {
+    printf("--------------------- DRAW CARD FUNCTION TEST ---------------------\n");
     int seed = 1000;
     int numPlayers = 2;
     struct gameState state;

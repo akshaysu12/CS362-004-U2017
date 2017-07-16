@@ -10,6 +10,7 @@ baron test card
 #include <stdlib.h>
 
 int main() {
+    printf("--------------------- BARON CARD TEST ---------------------\n");
     //int i, j, m;
     int handpos = 0, choice1 = 1, choice2 = 0, choice3 = 0, bonus = 0;
     //int remove1, remove2;
@@ -36,6 +37,7 @@ int main() {
     /*************************************
     test discarding estate card when there is one in hand
     *************************************/
+    printf("----------TEST: DISCARD ESTATE CARD - CARD IN HAND---------------\n");
     cardEffect(baron, choice1, choice2, choice3, &state, handpos, &bonus);
     //void callBaron(&state, 1, currPlayer);
 
@@ -53,7 +55,7 @@ int main() {
     printf("\n");
     printf("------TESTING HAND SIZE -------\n");
     printf("Expected Value: %d, ACTUAL VALUE: %d\n", preHandSize-1, state.handCount[currPlayer]);
-    if (preHandSize-1 == state.coins) {
+    if (preHandSize-1 == state.handCount[currPlayer]) {
       printf("HAND SIZE: TEST PASSED\n");
     }
     else
@@ -92,7 +94,7 @@ int main() {
     /*********************************************
     test discarding estate card when there are none in hand
     *********************************************/
-
+    printf("----------TEST: DISCARD ESTATE CARD - CARD NOT IN HAND---------------\n");
     // re-initialize a game state and player cards
     initializeGame(numPlayers, k, seed, &state);
 
@@ -172,6 +174,7 @@ int main() {
     /*************************
     test gainining estate card
     *************************/
+    printf("----------TEST: GAIN ESTATE CARD ---------------\n");
 
     // re-initialize a game state and player cards
     initializeGame(numPlayers, k, seed, &state);

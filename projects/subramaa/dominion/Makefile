@@ -1,5 +1,17 @@
 CFLAGS = -Wall -fpic -coverage -lm
 
+allTests: smithyCardTest adventurerCardTest CouncilRoomCardTest baronCardTest testIsGameOver testGainCard drawCardTest testEndTurn
+	./smithyCardTest &> unittestresult.out
+	./adventurerCardTest >> unittestresult.out
+	./CouncilRoomCardTest >> unittestresult.out
+	./baronCardTest >> unittestresult.out
+	./testIsGameOver >> unittestresult.out
+	./testGainCard >> unittestresult.out
+	./testEndTurn >> unittestresult.out
+	./drawCardTest >> unittestresult.out
+	gcov -b -c dominion.c >> unittestresult.out
+	cat dominion.c.gcov >> unittestresult.out
+
 testIsGameOver: testIsGameOver.c dominion.o rngs.o
 	gcc -o testIsGameOver -g  testIsGameOver.c dominion.o rngs.o $(CFLAGS)
 
@@ -56,7 +68,7 @@ runtests: testDrawCard
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
-all: playdom player testDrawCard testBuyCard badTestDrawCard smithyCardTest adventurerCardTest CouncilRoomCardTest baronCardTest testEndTurn drawCardTest testGainCard testIsGameOver
+all: playdom player testDrawCard testBuyCard badTestDrawCard smithyCardTest adventurerCardTest CouncilRoomCardTest baronCardTest testEndTurn drawCardTest testGainCard testIsGameOver allTests
 
 clean:
 	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe
