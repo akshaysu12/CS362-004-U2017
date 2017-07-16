@@ -1,5 +1,20 @@
 CFLAGS = -Wall -fpic -coverage -lm
 
+drawCardTest: drawCardTest.c dominion.o rngs.o
+	gcc -o drawCardTest -g  drawCardTest.c dominion.o rngs.o $(CFLAGS)
+
+testEndTurn: testEndTurn.c dominion.o rngs.o
+	gcc -o testEndTurn -g  testEndTurn.c dominion.o rngs.o $(CFLAGS)
+
+smithyCardTest: smithyCardTest.c dominion.o rngs.o
+	gcc -o smithyCardTest -g  smithyCardTest.c dominion.o rngs.o $(CFLAGS)
+
+adventurerCardTest: adventurerCardTest.c dominion.o rngs.o
+	gcc -o adventurerCardTest -g  adventurerCardTest.c dominion.o rngs.o $(CFLAGS)
+
+CouncilRoomCardTest: CouncilRoomCardTest.c dominion.o rngs.o
+	gcc -o CouncilRoomCardTest -g  CouncilRoomCardTest.c dominion.o rngs.o $(CFLAGS)
+
 rngs.o: rngs.h rngs.c
 	gcc -c rngs.c -g  $(CFLAGS)
 
@@ -24,16 +39,15 @@ testAll: dominion.o testSuite.c
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
 
-runtests: testDrawCard 
+runtests: testDrawCard
 	./testDrawCard &> unittestresult.out
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
 
-
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
-all: playdom player testDrawCard testBuyCard badTestDrawCard
+all: playdom player testDrawCard testBuyCard badTestDrawCard smithyCardTest adventurerCardTest CouncilRoomCardTest testEndTurn drawCardTest
 
 clean:
 	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe

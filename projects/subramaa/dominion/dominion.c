@@ -106,28 +106,29 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
   for (i = adventurer; i <= treasure_map; i++)       	//loop all cards
     {
       for (j = 0; j < 10; j++)           		//loop chosen cards
-	{
-	  if (kingdomCards[j] == i)
 	    {
-	      //check if card is a 'Victory' Kingdom card
-	      if (kingdomCards[j] == great_hall || kingdomCards[j] == gardens)
-		{
-		  if (numPlayers == 2){
-		    state->supplyCount[i] = 8;
-		  }
-		  else{ state->supplyCount[i] = 12; }
-		}
-	      else
-		{
-		  state->supplyCount[i] = 10;
-		}
-	      break;
-	    }
-	  else    //card is not in the set choosen for the game
-	    {
-	      state->supplyCount[i] = -1;
-	    }
-	}
+	       if (kingdomCards[j] == i)
+	       {
+	          //check if card is a 'Victory' Kingdom card
+	          if (kingdomCards[j] == great_hall || kingdomCards[j] == gardens)
+		        {
+		            if (numPlayers == 2){
+		                state->supplyCount[i] = 8;
+		            }
+		        else {
+              state->supplyCount[i] = 12; }
+		        }
+	          else
+		        {
+		            state->supplyCount[i] = 10;
+		        }
+	          break;
+	        }
+	        else    //card is not in the set choosen for the game
+	        {
+	           state->supplyCount[i] = -1;
+	        }
+	       }
 
     }
 
@@ -400,16 +401,15 @@ int isGameOver(struct gameState *state) {
   //if three supply pile are at 0, the game ends
   j = 0;
   for (i = 0; i < 25; i++)
-    {
-      if (state->supplyCount[i] == 0)
-	{
-	  j++;
-	}
+  {
+    if (state->supplyCount[i] == 0) {
+	     j++;
     }
+  }
   if ( j >= 3)
-    {
-      return 1;
-    }
+  {
+    return 1;
+  }
 
   return 0;
 }
@@ -525,7 +525,7 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
 int drawCard(int player, struct gameState *state)
 {	int count;
   int deckCounter;
-  if (state->deckCount[player] <= 0){//Deck is empty
+  if (state->deckCount[player] <= 0) {//Deck is empty
 
     //Step 1 Shuffle the discard pile back into a deck
     int i;
@@ -710,7 +710,7 @@ void callCouncil_Room(struct gameState *state, int currentPlayer, int handPos)
   for (i = 0; i < state->numPlayers; i++)
   {
   //changed if loop to while
-    while ( i != currentPlayer )
+    if ( i != currentPlayer )
     {
       drawCard(i, state);
       i++;
