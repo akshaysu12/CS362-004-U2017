@@ -9,7 +9,7 @@ endTurn Unit Tests
 
 int main() {
     printf("--------------------- DRAW END TURN FUNCTION TEST ---------------------\n");
-
+    int i;
     int seed = 1000;
     int numPlayers = 2;
     struct gameState state;
@@ -27,12 +27,12 @@ int main() {
     int preDiscardSize = state.discardCount[currPlayer];  //get current Player's discardSize
 
     int Hand[preHandSize];  //duplicate hand array to check that discard pile is accurate
-    for (int i = 0; i < preHandSize; i++) {
+    for (i = 0; i < preHandSize; i++) {
       Hand[i] = state.hand[currPlayer][i];
     }
 
     int supplyCards[27];                                   //get supplyCard count for all cards
-    for (int i = 0; i < 28; i++) {
+    for (i = 0; i < 28; i++) {
       supplyCards[i] = state.supplyCount[i];
     }
 
@@ -47,7 +47,7 @@ int main() {
       printf("DISCARD SIZE: TEST FAILED\n");
 
     int discardTest = 0;
-    for (int i = 0; i < preHandSize; i++) {
+    for (i = 0; i < preHandSize; i++) {
       if (Hand[i] != state.discard[currPlayer][i]) {
         discardTest = 1;
         printf("DISCARD CARD CHECK: TEST FAILED\n");
@@ -81,7 +81,7 @@ int main() {
       printf("HAND SIZE: TEST FAILED\n");
 
     int handValsTest = 0;
-    for (int i = 0; i < 5; i++) {
+    for (i = 0; i < 5; i++) {
       if (state.hand[currPlayer][i] != -1) {
         printf("HAND VALUES: TEST FAILED\n");
         handValsTest = 1;
@@ -103,7 +103,7 @@ int main() {
 
     int supplyFail = 0;
     //the supply cards should not have been affected by ending a turn
-    for (int i = 0; i < 28; i++) {
+    for (i = 0; i < 28; i++) {
       if (supplyCards[i] != state.supplyCount[i])
       {
         printf("SUPPLY CARD TEST FAILED\n");

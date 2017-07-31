@@ -9,6 +9,7 @@ drawCard Unit Tests
 
 int main() {
     printf("--------------------- DRAW CARD FUNCTION TEST ---------------------\n");
+    int i;
     int seed = 1000;
     int numPlayers = 2;
     struct gameState state;
@@ -34,7 +35,7 @@ int main() {
     int otherPlayerDeckSizes[numPlayers-1];
     int otherPlayerDiscardSizes[numPlayers-1];
 
-    for (int i = 0; i < numPlayers; i++) {
+    for (i = 0; i < numPlayers; i++) {
       if (i != currPlayer) {
         otherPlayerHandSizes[i] = state.handCount[i];
         otherPlayerDeckSizes[i] = state.deckCount[i];
@@ -44,7 +45,7 @@ int main() {
 
     //initial starting vars for other players and supply
     int supplyCards[27];                                   //get supplyCard count for all cards
-    for (int i = 0; i < 28; i++) {
+    for (i = 0; i < 28; i++) {
       supplyCards[i] = state.supplyCount[i];
     }
 
@@ -72,7 +73,7 @@ int main() {
       printf("\n");
       printf("------TESTING OTHER PLAYERS VALUES -------\n");
     //for all players hand,discard and deck size should not have changed
-    for (int i = 0; i < numPlayers; i++) {
+    for (i = 0; i < numPlayers; i++) {
       if (i != currPlayer) {
         //test hand size
         if (otherPlayerHandSizes[i] != state.handCount[i]) {
@@ -102,7 +103,7 @@ int main() {
 
     int supplyFail = 0;
     //the supply cards should not have been affected by playing smithy
-    for (int i = 0; i < 28; i++) {
+    for (i = 0; i < 28; i++) {
       if (supplyCards[i] != state.supplyCount[i])
       {
         printf("SUPPLY CARD TEST FAILED\n");
@@ -125,7 +126,7 @@ int main() {
     currPlayer = whoseTurn(&state);
 
     //move all of the cards from the deck to the discard
-    for (int i = 0; i < state.deckCount[currPlayer]; i++) {
+    for (i = 0; i < state.deckCount[currPlayer]; i++) {
       state.discard[currPlayer][state.discardCount[currPlayer]] = state.deck[currPlayer][state.deckCount[currPlayer]-1];
       state.discardCount[currPlayer]++;
     }
@@ -158,7 +159,7 @@ int main() {
     printf("------TESTING OTHER PLAYERS VALUES -------\n");
 
     //for all players hand,discard and deck size should not have changed
-    for (int i = 0; i < numPlayers; i++) {
+    for (i = 0; i < numPlayers; i++) {
       if (i != currPlayer) {
         //test hand size
         if (otherPlayerHandSizes[i] != state.handCount[i]) {
@@ -188,7 +189,7 @@ int main() {
 
     supplyFail = 0;
     //the supply cards should not have been affected by playing smithy
-    for (int i = 0; i < 28; i++) {
+    for (i = 0; i < 28; i++) {
       if (supplyCards[i] != state.supplyCount[i])
       {
         printf("SUPPLY CARD TEST FAILED\n");

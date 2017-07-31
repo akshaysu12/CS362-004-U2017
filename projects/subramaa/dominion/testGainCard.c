@@ -9,7 +9,7 @@ drawCard Unit Tests
 
 int main() {
     printf("--------------------- TEST GAIN CARD FUNCTION TEST ---------------------\n");
-
+    int i;
     int seed = 1000;
     int numPlayers = 2;
     struct gameState state;
@@ -33,7 +33,7 @@ int main() {
     int otherPlayerDeckSizes[numPlayers-1];
     int otherPlayerDiscardSizes[numPlayers-1];
 
-    for (int i = 0; i < numPlayers; i++) {
+    for (i = 0; i < numPlayers; i++) {
       if (i != currPlayer) {
         otherPlayerHandSizes[i] = state.handCount[i];
         otherPlayerDeckSizes[i] = state.deckCount[i];
@@ -85,7 +85,7 @@ int main() {
     //For each supplyCard in the game
     //test 1 2 and else test if incremented for currPlayer - deck, hand, discard
     //test that nothing changed for the other players
-    for (int i = 0; i < 27; i++) {
+    for (i = 0; i < 27; i++) {
       printf("\n");
       printf("-------------------TESTING CARD %d------------------\n", i);
       printf("\n");
@@ -106,7 +106,8 @@ int main() {
       }
 
       else {
-        for (int choice = 0; choice < 3; choice++) {
+        int choice;
+        for (choice = 0; choice < 3; choice++) {
           if (choice == 0) {
             // Re-initialize a game state and player cards
             initializeGame(numPlayers, k, seed, &state);
@@ -167,7 +168,7 @@ int main() {
       printf("------TESTING OTHER PLAYERS -------\n");
 
       //for all players hand,discard and deck size should not have changed
-      for (int i = 0; i < numPlayers; i++) {
+      for (i = 0; i < numPlayers; i++) {
         if (i != currPlayer) {
           //test hand size
           if (otherPlayerHandSizes[i] != state.handCount[i]) {

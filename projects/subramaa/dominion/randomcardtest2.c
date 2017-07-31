@@ -50,7 +50,8 @@ void checkCouncil_RoomCard(int p, struct gameState *post) {
 
   int supplyFail = 0;
   //the supply cards should not have been affected by playing smithy
-  for (int i = 0; i < 28; i++) {
+  int i;
+  for (i = 0; i < 28; i++) {
     if (pre.supplyCount[i] != post->supplyCount[i])
     {
       supplyFail = 1;

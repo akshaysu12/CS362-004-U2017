@@ -9,7 +9,7 @@ drawCard Unit Tests
 
 int main() {
     printf("--------------------- TEST IS GAME OVER FUNCTION TEST ---------------------\n");
-
+    int i;
     int seed = 1000;
     int numPlayers = 2;
     struct gameState state;
@@ -20,7 +20,7 @@ int main() {
 
     state.supplyCount[province] = 10;
     //test a case where at least every supply is 0 and make sure that isGameOver is accurate
-    for (int i = 0; i < 23; i++) {
+    for (i = 0; i < 23; i++) {
       initializeGame(numPlayers, k, seed, &state);
       state.supplyCount[i] = 0;
       state.supplyCount[i+1] = 0;
