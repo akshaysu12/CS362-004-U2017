@@ -128,4 +128,8 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state);
 /* Set array position of each player who won (remember ties!) to
    1, others to 0 */
 
+void callSmithy(struct gameState *state, int currentPlayer, int handPos);
+void callAdventurer(struct gameState *state, int currentPlayer, int temphand[]);
+void callCouncil_Room(struct gameState *state, int currentPlayer, int handPos);
+
 #endif

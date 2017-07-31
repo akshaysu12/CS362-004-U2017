@@ -1,6 +1,28 @@
 CFLAGS = -Wall -fpic -coverage -lm
 
-allTests: smithyCardTest adventurerCardTest CouncilRoomCardTest baronCardTest testIsGameOver testGainCard drawCardTest testEndTurn
+randTests: randomcardtest1 randomcardtest2 randomtestadventurer
+	./randomcardtest1 &> randomtestcard1.out
+	gcov -b -c dominion.c >> randomtestcard1.out
+	cat dominion.c.gcov >> randomtestcard1.out
+
+	./randomcardtest2 &> randomtestcard2.out
+	gcov -b -c dominion.c >> randomtestcard2.out
+	cat dominion.c.gcov >> randomtestcard2.out
+
+	./randomtestadventurer &> randomtestadventurer.out
+	gcov -b -c dominion.c >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
+
+randomtestadventurer: randomtestadventurer.c dominion.o rngs.o
+	gcc -o randomtestadventurer randomtestadventurer.c -g dominion.o rngs.o $(CFLAGS)
+
+randomcardtest2: randomcardtest2.c dominion.o rngs.o
+	gcc -o randomcardtest2 randomcardtest2.c -g dominion.o rngs.o $(CFLAGS)
+
+randomcardtest1: randomcardtest1.c dominion.o rngs.o
+	gcc -o randomcardtest1 randomcardtest1.c -g dominion.o rngs.o $(CFLAGS)
+
+unitTests: smithyCardTest adventurerCardTest CouncilRoomCardTest baronCardTest testIsGameOver testGainCard drawCardTest testEndTurn
 	./smithyCardTest &> unittestresult.out
 	./adventurerCardTest >> unittestresult.out
 	./CouncilRoomCardTest >> unittestresult.out
@@ -68,7 +90,7 @@ runtests: testDrawCard
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
-all: playdom player testDrawCard testBuyCard badTestDrawCard smithyCardTest adventurerCardTest CouncilRoomCardTest baronCardTest testEndTurn drawCardTest testGainCard testIsGameOver allTests
+all: playdom player randTests unitTests
 
 clean:
 	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe

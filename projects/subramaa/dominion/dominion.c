@@ -201,7 +201,6 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
 
 int shuffle(int player, struct gameState *state) {
 
-
   int newDeck[MAX_DECK];
   int newDeckPos = 0;
   int card;
@@ -525,7 +524,7 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
 int drawCard(int player, struct gameState *state)
 {	int count;
   int deckCounter;
-  if (state->deckCount[player] <= 0) {//Deck is empty
+  if (state->deckCount[player] <= 0){//Deck is empty
 
     //Step 1 Shuffle the discard pile back into a deck
     int i;
@@ -656,8 +655,9 @@ void callAdventurer(struct gameState *state, int currentPlayer, int temphand[])
       shuffle(currentPlayer, state);
     }
     drawCard(currentPlayer, state);
-
+    //printf("past draw card\n");
     int cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer] - 1]; //top card of hand is most recently drawn card.
+    //printf("top card is: %d\n", cardDrawn);
     if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold) {
       drawntreasure++;
     }
@@ -669,6 +669,7 @@ void callAdventurer(struct gameState *state, int currentPlayer, int temphand[])
       //state->discard[currentPlayer][state->discardCount[currentPlayer]++] = temphand[z-1];
       z++;
     }
+
   }
 
   while(z-1>=0) {
@@ -689,7 +690,6 @@ void callSmithy(struct gameState *state, int currentPlayer, int handPos)
     drawCard(currentPlayer, state);
   }
 
-  //discard card from hand
   discardCard(handPos, currentPlayer, state, 0);
   return;
 }
@@ -702,6 +702,7 @@ void callCouncil_Room(struct gameState *state, int currentPlayer, int handPos)
   {
     drawCard(currentPlayer, state);
   }
+
 
   //+1 Buy
   state->numBuys++;
