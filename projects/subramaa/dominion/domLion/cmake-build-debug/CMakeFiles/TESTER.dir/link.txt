@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/cc  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/TESTER.dir/dominion.c.o CMakeFiles/TESTER.dir/smithyTestAS.c.o CMakeFiles/TESTER.dir/rngs.c.o  -o TESTER 

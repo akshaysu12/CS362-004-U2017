@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/cc  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/domLion.dir/dominion.c.o CMakeFiles/domLion.dir/interface.c.o CMakeFiles/domLion.dir/playdom.c.o CMakeFiles/domLion.dir/player.c.o CMakeFiles/domLion.dir/rngs.c.o CMakeFiles/domLion.dir/rt.c.o  -o domLion 

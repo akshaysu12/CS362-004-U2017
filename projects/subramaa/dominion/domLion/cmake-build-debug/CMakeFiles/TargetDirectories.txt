@@ -1,0 +1,6 @@
+/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/CMakeFiles/TESTER.dir
+/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/CMakeFiles/play.dir
+/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/CMakeFiles/player.dir
+/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/CMakeFiles/domLion.dir

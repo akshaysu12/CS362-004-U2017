@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/cc  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/play.dir/dominion.c.o CMakeFiles/play.dir/playdom.c.o CMakeFiles/play.dir/rngs.c.o  -o play 

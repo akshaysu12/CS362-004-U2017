@@ -1,5 +1,63 @@
 CFLAGS = -Wall -fpic -fprofile-arcs -ftest-coverage -lm
 
+smithyTestAS: smithyTestAS.c dominion.o rngs.o
+	gcc -o smithyTestAS smithyTestAS.c -g dominion.o rngs.o  $(CFLAGS)
+
+adventurerTestAS: dominion.o rngs.o
+	gcc -o adventurerTestAS adventurerTestAS.c -g dominion.o rngs.o  $(CFLAGS)
+
+baronTestAS: dominion.o rngs.o
+	gcc -o baronTestAS baronTestAS.c -g dominion.o rngs.o  $(CFLAGS)
+
+council_roomTestAS: dominion.o rngs.o
+	gcc -o council_roomTestAS council_roomTestAS.c -g dominion.o rngs.o  $(CFLAGS)
+
+testDrawCard1AS: dominion.o rngs.o
+	gcc -o testDrawCard1AS testDrawCard1AS.c -g dominion.o rngs.o  $(CFLAGS)
+
+testEndTurnAS: dominion.o rngs.o
+	gcc -o testEndTurnAS testEndTurnAS.c -g dominion.o rngs.o  $(CFLAGS)
+
+testGainCardAS: dominion.o rngs.o
+	gcc -o testGainCardAS testGainCardAS.c -g dominion.o rngs.o  $(CFLAGS)
+
+testIsGameOverAS: dominion.o rngs.o
+	gcc -o testIsGameOverAS testIsGameOverAS.c -g dominion.o rngs.o  $(CFLAGS)
+
+randomtestadventurerAS: dominion.o rngs.o randomtestadventurerAS.c
+	gcc -o randomtestadventurerAS randomtestadventurerAS.c -g dominion.o rngs.o $(CFLAGS)
+	./randomtestadventurerAS &> randomtestadventurerAS.out
+	gcov -b dominion.c >> randomtestadventurerAS.out
+	cat dominion.c.gcov >> randomtestadventurerAS.out
+
+randomcardtest1AS: dominion.o rngs.o
+	gcc -o randomcardtest1AS randomcardtest1AS.c -g dominion.o rngs.o $(CFLAGS)
+	./randomcardtest1AS &> randomcardtest1AS.out
+	gcov -b dominion.c >> randomcardtest1AS.out
+	cat dominion.c.gcov >> randomcardtest1AS.out
+
+randomcardtest2AS: dominion.o rngs.o
+	gcc -o randomcardtest2AS randomcardtest2AS.c -g dominion.o rngs.o $(CFLAGS)
+	./randomcardtest2AS &> randomcardtest2AS.out
+	gcov -b dominion.c >> randomcardtest2AS.out
+	cat dominion.c.gcov >> randomcardtest2AS.out
+
+akshayRandTests: randomtestadventurerAS randomcardtest1AS randomcardtest2AS
+
+runASunittests: smithyTestAS adventurerTestAS baronTestAS council_roomTestAS testDrawCard1AS testEndTurnAS testGainCardAS testIsGameOverAS
+	./smithyTestAS &> ASunittests.out
+	./adventurerTestAS &> ASunittests.out
+	./baronTestAS &> ASunittests.out
+	./council_roomTestAS &> ASunittests.out
+	./testDrawCard1AS &> ASunittests.out
+	./testEndTurnAS &> ASunittests.out
+	./testGainCardAS &> ASunittests.out
+	./testIsGameOverAS &> ASunittests.out
+	gcov -b dominion.c >> ASunittests.out
+	cat dominion.c.gcov >> ASunittests.out
+
+akshayTests: akshayRandTests runASunittests
+
 rngs.o: rngs.h rngs.c
 	gcc -c rngs.c -g  $(CFLAGS)
 
@@ -24,7 +82,7 @@ testAll: dominion.o testSuite.c
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
 
-runtests: testDrawCard 
+runtests: testDrawCard
 	./testDrawCard &> unittestresult.out
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
@@ -81,29 +139,7 @@ rununittests: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardte
 randtesthelper.o: dominion.o
 	gcc -c randtesthelper.c -g $(CFLAGS)
 
-randomtestadventurer: dominion.o rngs.o randomtestadventurer.c
-	gcc -o randomtestadventurer randomtestadventurer.c -g dominion.o rngs.o $(CFLAGS)
-	./randomtestadventurer &> randomtestadventurer.out
-	gcov -d -b dominion.c >> randomtestadventurer.out
-	cat dominion.c.gcov >> randomtestadventurer.out
-
-
-randomtestcard1: dominion.o rngs.o
-	gcc -o randtestcard1 randomtestcard1.c -g dominion.o rngs.o $(CFLAGS)
-	./randtestcard1 &> randomtestcard1.out
-	gcov -d -b dominion.c >> randomtestcard1.out
-	cat dominion.c.gcov >> randomtestcard1.out
-
-randomtestcard2: dominion.o rngs.o
-	gcc -o randtestcard2 randomtestcard2.c -g dominion.o rngs.o $(CFLAGS)
-	./randtestcard2 &> randomtestcard2.out
-	gcov -d -b dominion.c >> randomtestcard2.out
-	cat dominion.c.gcov >> randomtestcard2.out
-
-runrandomtests: randomtestadventurer randomtestcard1 randomtestcard2
-	
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
-
 clean:
-	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe badTestDrawCard badTestDrawCard.exe randomtestadventurer randtestcard1 randtestcard2 unittest1 unittest2 unittest3 unittest4 runPlaydom cardtest1 cardtest2 cardtest3 cardtest4
+	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe badTestDrawCard badTestDrawCard.exe randomtestadventurer randtestcard1 randtestcard2 smithyTestAS unittest2 unittest3 unittest4 runPlaydom cardtest1 cardtest2 cardtest3 cardtest4

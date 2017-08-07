@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="domLion"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TESTER">
+				<Option output="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/TESTER" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 TESTER"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TESTER/fast">
+				<Option output="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/TESTER" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 TESTER/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="play">
+				<Option output="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/play" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 play"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="play/fast">
+				<Option output="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/play" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 play/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="player">
+				<Option output="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/player" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 player"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="player/fast">
+				<Option output="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/player" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 player/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="domLion">
+				<Option output="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/domLion" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 domLion"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="domLion/fast">
+				<Option output="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/domLion" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 domLion/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/dominion.c">
+			<Option target="TESTER"/>
+			<Option target="play"/>
+			<Option target="player"/>
+			<Option target="domLion"/>
+		</Unit>
+		<Unit filename="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/dominion.h">
+			<Option target="domLion"/>
+		</Unit>
+		<Unit filename="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/interface.c">
+			<Option target="player"/>
+			<Option target="domLion"/>
+		</Unit>
+		<Unit filename="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/interface.h">
+			<Option target="player"/>
+			<Option target="domLion"/>
+		</Unit>
+		<Unit filename="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/playdom.c">
+			<Option target="play"/>
+			<Option target="domLion"/>
+		</Unit>
+		<Unit filename="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/player.c">
+			<Option target="player"/>
+			<Option target="domLion"/>
+		</Unit>
+		<Unit filename="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/rngs.c">
+			<Option target="TESTER"/>
+			<Option target="play"/>
+			<Option target="player"/>
+			<Option target="domLion"/>
+		</Unit>
+		<Unit filename="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/rngs.h">
+			<Option target="TESTER"/>
+			<Option target="play"/>
+			<Option target="player"/>
+			<Option target="domLion"/>
+		</Unit>
+		<Unit filename="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/rt.c">
+			<Option target="domLion"/>
+		</Unit>
+		<Unit filename="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/smithyTestAS.c">
+			<Option target="TESTER"/>
+		</Unit>
+		<Unit filename="/Users/akshaysubramanian/GitHub/CS362-004-U2017/projects/subramaa/dominion/domLion/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
